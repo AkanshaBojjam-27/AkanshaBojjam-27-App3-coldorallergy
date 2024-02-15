@@ -138,17 +138,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p>Are your symptoms seasonal or chronic?</p>
 	</div>
 
-	<a href="#end of questionnaire" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-	<a href="#end of questionnaire" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#Results Page" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#Results Page" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
 </div>	
 
-<div class="page" id="end of questionnaire">
+<!--<div class="page" id="end of questionnaire">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>End of Questionnaire</h1>
 	</div>
 	
 	<a href="#Results Page" class="w3-btn w3-black"> Go to Results </a>
 </div>
+	commented out because redundanr--> 
 
 <div class="page" id="Results Page">
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -157,12 +158,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container">
 		<p id="results"></p> <!--calls variable for results-->
-		<a onclick="getResults()" class="w3-btn w3-black">Get results</a>
+		<a onclick="getResults()" class="w3-btn w3-black">Get results</a> <!--created button to get results-->
 		<script>
 			function getResults()
 			{
-			var allergyPercent = 100*(allergy_count/4);
-			var coldPercent = 100*(cold_count/4);
+			var allergyPercent = 100*(allergy_count/4); //calculates allergy percentage using old variable
+			var coldPercent = 100*(cold_count/4); //calculates cold percentage using old variable
 			var resultText = document.getElementById("results");
 			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
 			}
