@@ -36,18 +36,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var allergy_count = 0; // creates variable to keep track of answers corresponding to allergy
+        var cold_count = 0; // creates variable to keep track of answers corresponding to cold
 
 
         function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		//alert(allergy_count);  <- took out because a bubble kept popping up alerting it
+            allergy_count = allergy_count + 1; // adds one point to allergy variable 
+		//alert(allergy_count);  <- took out because a bubble kept popping up
 
         }
 
         function coldAdd(){
-            cold_count = cold_count + 1;
+            cold_count = cold_count + 1; // adds one point to cold variable 
         }
 
   </script>
@@ -99,8 +99,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         <p>Are your eyes watery or itchy?</p>    
     	</div>
 
-	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-	<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!--added onclick function to keep track of allergy answers-->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!--added onclick function to keep track of cold answers-->
 </div>
 
 <div class="page" id="two">
@@ -112,7 +112,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p>Do you have a fever?</p>
 	</div>
 
-	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!--changed word after "href" from two to three so it links to the next page, same idea for all other areas this is used-->
 	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
 </div>	
 
@@ -149,9 +149,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<a href="#Results Page" class="w3-btn w3-black"> Go to Results </a>
 </div>
-	commented out because redundanr--> 
+	commented out because it is a redundant page--> 
 
-<div class="page" id="Results Page">
+<div class="page" id="Results Page"> <!--created new page for results-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results Page</h1>
 	</div> 
@@ -160,19 +160,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p id="results"></p> <!--calls variable for results-->
 		<a onclick="getResults()" class="w3-btn w3-black">Get results</a> <!--created button to get results-->
 		<script>
-			function getResults()
+			function getResults() // created function to get results that corresponds to earlier button (getResults)
 			{
-			var allergyPercent = 100*(allergy_count/4); //calculates allergy percentage using old variable
-			var coldPercent = 100*(cold_count/4); //calculates cold percentage using old variable
-			var resultText = document.getElementById("results");
-			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
+			var allergyPercent = 100*(allergy_count/4); // calculates allergy percentage using old variable
+			var coldPercent = 100*(cold_count/4); // calculates cold percentage using old variable
+			var resultText = document.getElementById("results"); // created variable to help print out the results
+			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%"; // this line prints out the results text
 			}
 		</script/>
 	</div>
 	
 </div>
 	
-<footer class="w3-bottom w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-carrot"> // this creates the footer
 	<p>DIY!</p>
 </footer>
 
